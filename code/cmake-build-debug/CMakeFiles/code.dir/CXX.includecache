@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/MyVector.hpp
+iostream
+-
+MyVector.inl
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/MyVector.inl
+
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/MyVector.inl
+
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.cpp
+Polynomal.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.hpp
+
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.hpp
+MyVector.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/MyVector.hpp
+Term.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Term.hpp
+
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Term.hpp
+sstream
+-
+iostream
+-
+
