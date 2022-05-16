@@ -10,6 +10,7 @@
 class Polynomal;
 
 class Term {
+protected:
     int _coefficient = 0;
     size_t _power = 0;
 
@@ -22,15 +23,17 @@ public:
 
     Term(int coeff, size_t power) : _coefficient(coeff), _power(power) {};
 
-    Term &operator+=(Term &term);
+    Term &operator+=(const Term &term);
 
     friend std::ostream &operator<<(std::ostream &out, const Term &term);
 
     friend std::istream &operator>>(std::istream &in, Term &term);
+
+    inline int getCoeff() { return _coefficient; }
 };
 
 
-Term operator+(Term &s1, Term &s2);
+Term operator+(Term s1, Term s2);
 
 
 #endif //CODE_TERM_HPP

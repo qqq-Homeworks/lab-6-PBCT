@@ -8,6 +8,9 @@ CMakeFiles/code.dir/Polynomal.cpp.o: \
  ../Polynomal.hpp \
  ../Term.hpp
 CMakeFiles/code.dir/Term.cpp.o: \
+ ../MyVector.hpp \
+ ../MyVector.inl \
+ ../Polynomal.hpp \
  ../Term.cpp \
  ../Term.hpp
 CMakeFiles/code.dir/main.cpp.o: \

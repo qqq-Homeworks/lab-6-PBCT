@@ -18,11 +18,11 @@ MyVector<T>::MyVector(T el, int maxsz) : maxsize(maxsz) {
 }
 
 
-template<class T>
-template<class Compare>
-void MyVector<T>::sort(Compare cmp) {
-    std::sort(this->pdata, this->pdata + size, cmp);
-}
+//template<class T>
+//template<class Compare>
+//void MyVector<T>::sort(Compare cmp) {
+//    std::sort(this->pdata, this->pdata + size, cmp);
+//}
 
 //template<>
 //void MyVector<char *>::resize() {
@@ -56,7 +56,6 @@ void MyVector<T>::resize() {
     T *newMemory = new T[maxsize];
 
     for (size_t i = 0; i < size; ++i) {
-        if (pdata[i] == NULL) break;
         newMemory[i] = pdata[i];
     }
     delete[] pdata;
@@ -117,9 +116,8 @@ MyVector<T> &MyVector<T>::operator=(const MyVector<T> &v) {
     if (this != &v) {
         maxsize = v.maxsize;
         size = v.size;
-        pdata = new T *[v.maxsize];
+        pdata = new T[v.maxsize];
         for (size_t i = 0; i < size; ++i) {
-            pdata[i] = new T;
             pdata[i] = v.pdata[i];
         }
     }
