@@ -66,7 +66,7 @@ void MyVector<T>::resize() {
 template<class T>
 MyVector<T>::MyVector(const MyVector &v) : maxsize(v.maxsize), size(v.size) {
     pdata = new T[v.maxsize];
-    for (size_t i = 0; i < size; ++i) {
+    for (size_t i = 0; i < size+1; ++i) {
         pdata[i] = v.pdata[i];
     }
 }

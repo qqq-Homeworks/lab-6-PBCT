@@ -12,12 +12,17 @@ std::ostream &operator<<(std::ostream &out, const Term &term) {
         if (term._power == 0) {
             out << term._coefficient;
         } else if (term._power == 1) {
-            if (term._coefficient != 1) {
+            if (term._coefficient != 1 && term._coefficient != -1) {
                 out << term._coefficient << 'x';
-            } else out << 'x';
+            } else if (term._coefficient == -1) { out << "-x"; }
+            else {
+                out << 'x';
+            }
         } else {
-            if (term._coefficient != 1) {
+            if (term._coefficient != 1 && term._coefficient != -1) {
                 out << term._coefficient << 'x' << '^' << term._power;
+            } else if (term._coefficient == -1) {
+                out << '-' << 'x' << '^' << term._power;
             } else {
                 out << 'x' << '^' << term._power;
             }
@@ -31,9 +36,15 @@ std::istream &operator>>(std::istream &in, Term &term) {
     in >> term._coefficient;
     if (in.fail()) {
         in.clear();
-        in.ignore();
-        in.unget(); // я гений я сверхчеловек ЗХВАЗЫВАЩВЫ
-        term._coefficient = 1;
+        //in.ignore();
+        in.unget();
+        if (in.peek() == '-') {
+            term._coefficient = -1;
+            in.get();
+        } else {
+            term._coefficient = 1;
+            in.get();
+        }
         if (in.peek() == 'x') {
             in.get();
             if (in.peek() == '^') {

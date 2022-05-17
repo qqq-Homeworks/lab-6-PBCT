@@ -25,7 +25,7 @@ public:
     };
 
     Polynomal(size_t power) : _maxpower(power) {
-        for (size_t i = 0; i < power; ++i) {
+        for (size_t i = 0; i < power+1; ++i) {
             _terms.add_element(Term(0, i));
         }
     };

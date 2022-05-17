@@ -16,10 +16,6 @@ MyVector.inl
 MyVector.hpp
 /Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/MyVector.hpp
 
-/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.cpp
-Polynomal.hpp
-/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.hpp
-
 /Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.hpp
 MyVector.hpp
 /Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/MyVector.hpp
@@ -31,4 +27,10 @@ sstream
 -
 iostream
 -
+
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/main.cpp
+iostream
+-
+Polynomal.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/6 lab/code/Polynomal.hpp
 

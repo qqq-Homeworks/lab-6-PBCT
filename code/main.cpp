@@ -4,17 +4,17 @@
 int main() {
 
     Term a, b;
-    std::cin >> a;
-    std::cin >> b;
-    Polynomal ap(a), bp(b), cp;
-    std::cin >> cp;
-//    cp+=a;
-//    cp+=b;
-//    cp*=ap;
-//    cp*=cp;
-    //std::cout << ap << '\n';
-    //cp *= ap;
-    std::cout << cp;
+    Polynomal ap, bp, ed(Term(-1, 0));
 
+    std::cin >> ap;
+    std::cout << ap << '\n';
+    std::cin >> bp;
+    std::cout << bp << '\n';
+    ed *= bp;
+    std::cout << ed << '\n';
+//    ap += bp;
+//    std::cout << ap << '\n';
+//    ap *= bp;
+//    std::cout << ap << '\n';
     return 0;
 }

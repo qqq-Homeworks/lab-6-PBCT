@@ -4,16 +4,19 @@
 
 std::ostream &operator<<(std::ostream &out, const Polynomal &polynomal) {
     size_t q = 0;
+    bool isNull = true;
 
-    for (size_t i = 0; i < polynomal._maxpower+1; ++i) {
+    for (size_t i = 0; i < polynomal._maxpower + 1; ++i) {
         if (polynomal._terms[i].getCoeff() != 0) {
             q++;
+            isNull = false;
         }
         if (q > 1 && polynomal._terms[i].getCoeff() > 0) {
             out << '+';
         }
         out << polynomal._terms[i];
     }
+    if (isNull) { out << 0; }
     return out;
 }
 
@@ -23,7 +26,7 @@ std::istream &operator>>(std::istream &in, Polynomal &polynomal) {
     Term temp;
     for (size_t i = 0; i < count; ++i) {
         in >> temp;
-        polynomal+=temp;
+        polynomal += temp;
     }
     return in;
 }
@@ -49,8 +52,8 @@ Polynomal &Polynomal::operator+=(const Term &term) {
 Polynomal &Polynomal::operator+=(const Polynomal &polynomal) {
     Polynomal result(*this);
     bool isNeededToInsert = true;
-    for (size_t i = 0; i < polynomal._terms.Size(); ++i) {
-        for (size_t j = 0; j < _terms.Size(); ++j) {
+    for (size_t i = 0; i < polynomal._maxpower + 1; ++i) {
+        for (size_t j = 0; j < _maxpower + 1; ++j) {
             if (polynomal._terms[i]._power == _terms[j]._power) {
                 result._terms[j] += polynomal._terms[i];
                 isNeededToInsert = false;
@@ -79,7 +82,7 @@ Polynomal &Polynomal::operator*=(const Polynomal &polynomal) {
             newCoeffs[i + j] += polynomal._terms[j].getCoeff() * _terms[i].getCoeff();
         }
     }
-    Polynomal result(polynomal._maxpower + _maxpower + 1);
+    Polynomal result(polynomal._maxpower + _maxpower);
     for (size_t i = 0; i < polynomal._maxpower + _maxpower + 1; ++i) {
         result._terms[i]._coefficient = newCoeffs[i];
     }
